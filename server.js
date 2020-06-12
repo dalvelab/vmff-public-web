@@ -46,8 +46,6 @@ app.set("view engine", "handlebars");
 // LISTEN FOR SERVER
 const PORT = process.env.PORT;
 
-console.log(process.env.NODE_ENV);
-
 // Mount routes
 app.use("/", pages);
 app.use("/program", program);
