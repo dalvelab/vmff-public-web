@@ -1,0 +1,125 @@
+.sidebar {
+  width: 300px;
+  margin-left: -300px;
+  height: 100%;
+  background-color: $white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: all 0.5s;
+  overflow: hidden;
+  #close-sidebar {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 25px;
+    cursor: pointer;
+  }
+  .sidebar-title {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .menu {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin-top: 30px;
+    .link {
+      width: 300px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      font-size: 16px;
+      transition: 0.2s ease-in-out;
+      border-bottom: 1px solid $gray;
+      i {
+        transition: 0.2s ease-in-out;
+        margin: 0 15px 0px 15px;
+      }
+      &:hover {
+        i {
+          color: $red;
+        }
+        color: $black;
+        background-color: $gray;
+      }
+    }
+  }
+  .social-media-links {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    @include screen(tablet-wide) {
+      bottom: 5px;
+    }
+    @media screen and (max-height: 550px) {
+      display: none;
+    }
+    .sidebar-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 2px solid $gray;
+      position: relative;
+      transition: 0.2s ease-in-out;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 15px;
+      &:first-child {
+        margin-left: 0px;
+      }
+    }
+    i {
+      font-size: 25px;
+      transition: 0.2s ease-in-out;
+    }
+    .fa-instagram {
+      color: #c32aa3;
+    }
+    .fa-facebook-f {
+      color: #3b5998;
+    }
+    .fa-vk {
+      color: #4a76a8;
+    }
+    .icon-instagram {
+      &:hover {
+        border: 2px solid #c32aa3;
+        background-color: #c32aa3;
+        i {
+          color: $white;
+        }
+      }
+    }
+    .icon-facebook {
+      &:hover {
+        border: 2px solid #3b5998;
+        background-color: #3b5998;
+        i {
+          color: $white;
+        }
+      }
+    }
+    .icon-vk {
+      &:hover {
+        border: 2px solid #4a76a8;
+        background-color: #4a76a8;
+        i {
+          color: $white;
+        }
+      }
+    }
+  }
+  .btn-row {
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+}

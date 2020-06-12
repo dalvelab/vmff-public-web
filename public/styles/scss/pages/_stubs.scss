@@ -1,0 +1,50 @@
+// STUB RENOVATE
+.section-renovate-stub {
+  width: 100%;
+  height: 100vh;
+  background-image: url("../../../images/tech_working_stub.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 0;
+  .stub-content {
+    width: auto;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    transform: translateX(-50%) translateY(-10%);
+    text-align: center;
+    .stub-socials {
+      margin-top: 15px;
+      width: auto;
+      display: flex;
+      justify-content: center;
+      .icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        margin-left: 15px;
+        border: 2px solid $gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:first-child {
+          margin-left: 0;
+        }
+        i {
+          font-size: 25px;
+        }
+        .fa-facebook-f {
+          color: #3b5998;
+        }
+        .fa-instagram {
+          color: #c32aa3;
+        }
+        .fa-vk {
+          color: #4a76a8;
+        }
+      }
+    }
+  }
+}

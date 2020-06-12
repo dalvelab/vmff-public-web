@@ -2,9 +2,18 @@ const express = require("express");
 const path = require("path");
 const exphbs = require("express-handlebars");
 const dotenv = require("dotenv");
+const connectDB = require("./config/db");
+
+// Require routes
+const pages = require("./routes/pages");
+const program = require("./routes/program");
+const albums = require("./routes/albums");
 
 // Load ENV variables
 dotenv.config({ path: "./config/config.env" });
+
+// Connect DB
+connectDB();
 
 const app = express();
 
@@ -20,6 +29,10 @@ if (process.env.NODE_ENV === "development") {
 
 // STATIC FOLDER
 app.use(express.static(path.join(__dirname, "public")));
+app.use(
+  "/uploads",
+  express.static(path.join(__dirname, "../app_admin/public/uploads"))
+);
 
 // HANDLEBARS
 app.engine(
@@ -33,13 +46,12 @@ app.set("view engine", "handlebars");
 // LISTEN FOR SERVER
 const PORT = process.env.PORT;
 
-const currentDate = new Date();
+console.log(process.env.NODE_ENV);
 
-app.get("*", async (req, res) => {
-  res.render("stubs/technical-works", {
-    title: `Венский Фестиваль ${currentDate.getFullYear()}`,
-  });
-});
+// Mount routes
+app.use("/", pages);
+app.use("/program", program);
+app.use("/albums", albums);
 
 const server = app.listen(
   PORT,

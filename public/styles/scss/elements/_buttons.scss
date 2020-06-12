@@ -1,0 +1,172 @@
+button {
+  border: none;
+  background-color: $white;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+}
+
+.btn {
+  padding: 10px 30px;
+  text-align: center;
+  color: $red;
+  border: 1px solid $red;
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: $white;
+    background-color: $red;
+  }
+}
+
+.btn-round {
+  border-radius: 20px;
+}
+// Send Email Button (Use footer on Each Page)
+.send-email-btn {
+  width: 100%;
+  height: 40px;
+  border: 2px solid $gray;
+  border-left: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.2s ease-in-out;
+  i {
+    color: $red;
+  }
+}
+// Breadcrumb (Use Program-Single Page)
+.breadcrumb {
+  width: auto;
+  height: auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  .breadcrumb-btn {
+    padding: 10px 30px 10px 45px;
+    border-radius: 20px;
+    background-color: $white;
+    box-shadow: -5px 2px 30px #ccc;
+    display: flex;
+    align-items: flex-end;
+    font-weight: 600;
+    margin-left: -35px;
+    transition: 0.2s ease-in-out;
+    i {
+      margin-right: 5px;
+    }
+    &:first-child {
+      z-index: 2;
+      padding-left: 30px;
+      margin-left: 0;
+    }
+    &:last-child {
+      background-color: #0167fb;
+      color: $white;
+      i {
+        color: $white;
+      }
+      &:hover {
+        background-color: $red;
+      }
+    }
+    &:hover {
+      background-color: $red;
+      color: $white;
+      i {
+        color: $white;
+      }
+    }
+  }
+}
+// Share Button (Use Program-Single Page)
+.share-btn {
+  padding: 10px 25px;
+  border-radius: 20px;
+  i {
+    font-size: 25px;
+    color: $white;
+  }
+}
+// Accordion Button (Use FAQ page)
+.accordion-wrapper {
+  width: 90%;
+  height: auto;
+  min-height: 150px;
+  margin: 25px auto 0px auto;
+  position: relative;
+  @include screen(phone) {
+    width: 100%;
+  }
+  .accordion-section-title {
+    margin-top: 25px;
+    color: #b2b7ba;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  .accordion {
+    width: calc(100% - 50px);
+    margin: 15px 0px 0px 50px;
+    min-height: 50px;
+    height: auto;
+    position: relative;
+    display: flex;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    @include screen(phone) {
+      width: 100%;
+      margin-left: 0px;
+    }
+    &:after {
+      @include pseudo;
+      background-color: #f0f2f3;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+    }
+    .accordion-title {
+      margin: 12.5px 0px 12.5px 0px;
+      @include screen(phone) {
+        margin-right: 50px;
+      }
+    }
+    i {
+      position: absolute;
+      font-size: 25px;
+      right: 15px;
+      top: 12.5px;
+    }
+    .plus-icon {
+      transform: rotate(45deg);
+    }
+  }
+  .content {
+    width: calc(100% - 50px);
+    margin: 10px 0px 10px 50px;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.4s ease-out;
+    line-height: 2;
+    position: relative;
+    @include screen(tablet) {
+      width: calc(100% - 10px);
+      margin: 10px 0px 10px 10px;
+    }
+    &:after {
+      @include pseudo;
+      background-color: #f0f2f3;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+    }
+    p {
+      margin-bottom: 15px;
+    }
+  }
+  .accordion-opened {
+    max-height: 150px;
+  }
+}

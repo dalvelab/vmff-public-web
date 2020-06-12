@@ -1,0 +1,200 @@
+.footer {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  .subscribe-email {
+    width: 100%;
+    height: 60px;
+    @include screen(tablet) {
+      height: 120px;
+    }
+    border: 2px solid $gray;
+    .container {
+      height: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      column-gap: 20px;
+      @include screen(tablet) {
+        grid-template-columns: 1fr;
+      }
+    }
+    .mini-section {
+      &:nth-child(1) {
+        display: flex;
+        margin: auto auto auto 0;
+        @include screen(tablet) {
+          margin: 10px auto 10px auto;
+          text-align: center;
+        }
+        p {
+          font-size: 20px;
+        }
+      }
+      &:nth-child(2) {
+        display: grid;
+        height: 43px;
+        grid-template-columns: 1fr 54px;
+        margin: auto 0px auto 0px;
+        @include screen(tablet) {
+          width: 90%;
+          margin: 0px auto 0px auto;
+        }
+        @include screen(phone) {
+          width: 100%;
+        }
+      }
+      .subscribe-input {
+        width: 100%;
+        height: 100%;
+      }
+      .send-input {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  .information-board {
+    width: 100%;
+    min-height: 100px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 15px;
+    column-gap: 20px;
+    @media screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .mini-section {
+    position: relative;
+    height: auto;
+    margin-top: 10px;
+    &:nth-child(1) {
+      p {
+        text-align: left;
+      }
+    }
+    &:nth-child(2) {
+      p {
+        text-align: center;
+      }
+      @media screen and (max-width: 650px) {
+        p {
+          text-align: left;
+        }
+      }
+    }
+    &:nth-child(3) {
+      p {
+        text-align: right;
+        @media screen and (max-width: 650px) {
+          display: none;
+        }
+      }
+    }
+    .list {
+      p {
+        font-size: 13px;
+      }
+    }
+    .social-media-links {
+      width: 100%;
+      height: auto;
+      position: relative;
+      bottom: 20px;
+      display: flex;
+      justify-content: center;
+      margin-top: 25px;
+      @media screen and (max-width: 650px) {
+        justify-content: flex-start;
+      }
+      .sidebar-icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 2px solid $gray;
+        position: relative;
+        transition: 0.2s ease-in-out;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+        &:first-child {
+          margin-left: 0px;
+        }
+      }
+      i {
+        font-size: 25px;
+        transition: 0.2s ease-in-out;
+      }
+      .fa-instagram {
+        color: #c32aa3;
+      }
+      .fa-facebook-f {
+        color: #3b5998;
+      }
+      .fa-vk {
+        color: #4a76a8;
+      }
+      .icon-instagram {
+        &:hover {
+          border: 2px solid #c32aa3;
+          background-color: #c32aa3;
+          i {
+            color: $white;
+          }
+        }
+      }
+      .icon-facebook {
+        &:hover {
+          border: 2px solid #3b5998;
+          background-color: #3b5998;
+          i {
+            color: $white;
+          }
+        }
+      }
+      .icon-vk {
+        &:hover {
+          border: 2px solid #4a76a8;
+          background-color: #4a76a8;
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+    .links-list {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      @media screen and (max-width: 650px) {
+        display: none;
+      }
+      a {
+        font-size: 13px;
+        color: $red;
+        margin-top: 5px;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  .createdby {
+    width: 100%;
+    height: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 12px;
+    }
+    a {
+      font-size: 12px;
+    }
+  }
+}

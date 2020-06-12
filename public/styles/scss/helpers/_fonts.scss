@@ -1,0 +1,70 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat");
+
+h1 {
+  font-size: 4.5rem;
+}
+h2 {
+  font-size: 4rem;
+  @include screen(tablet) {
+    font-size: 3.5rem;
+  }
+}
+h3 {
+  font-size: 3.5rem;
+}
+h4 {
+  font-size: 3rem;
+}
+h5 {
+  font-size: 2.5rem;
+}
+h6 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+a {
+  font-size: 1.6rem;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.link {
+  transition: 0.2s ease-in-out;
+  &:hover {
+    color: $red;
+  }
+}
+
+.upper {
+  text-transform: uppercase;
+}
+
+.light {
+  font-weight: 300;
+}
+.regular {
+  font-weight: 400;
+}
+.bold {
+  font-weight: 600;
+}
+
+.font-white {
+  color: $white;
+}
+.font-black {
+  color: $black;
+}
+.font-grey {
+  color: $gray;
+}
+.font-red {
+  color: $red;
+}
+
+.text-center {
+  text-align: center;
+}

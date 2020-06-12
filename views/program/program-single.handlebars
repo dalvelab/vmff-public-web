@@ -1,0 +1,60 @@
+<!-- Section Day Single -->
+<section class="section-day-single">
+  <div class="container">
+    <div class="day-content">
+      <div class="info-block">
+        <div class="breadcrumb">
+          <a href="/program" class="breadcrumb-btn">
+            <i class="material-icons">calendar_today</i>
+            Программа</a
+          >
+          <a href="/program/day/{{day.programDay}}" class="breadcrumb-btn">
+            <i class="material-icons">music_note</i>
+            День {{day.programDay}}</a
+          >
+        </div>
+      </div>
+      <h2 class="day-title">{{day.title}}</h2>
+      <h6 class="day-genre">Живой концерт</h6>
+      <div class="day-icons">
+        <div class="icon">
+          <i class="material-icons">calendar_today</i>
+          <p>{{day.date}}</p>
+        </div>
+        <div class="icon">
+          <i class="material-icons">access_time</i>
+          <p>Начало в {{day.startTime}}</p>
+        </div>
+        <div class="icon">
+          <i class="material-icons">location_on</i>
+          <p>{{day.place}}</p>
+        </div>
+      </div>
+      <div class="day-description">
+        <img src="/uploads/{{day.image}}" alt="" class="day-image" />
+        <div class="day-share-buttons">
+          <h6>Поделиться в:</h6>
+          <div class="share-buttons-wrapper">
+            <button class="share-btn fb-share-btn">
+              <i class="fab fa-facebook-f"></i>
+            </button>
+            <a href="#" class="share-btn wa-share-btn" target="_blank">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+            <a href="#" class="share-btn tg-share-btn">
+              <i class="fab fa-telegram-plane"></i>
+            </a>
+            <a href="#" class="share-btn em-share-btn">
+              <i class="far fa-envelope"></i>
+            </a>
+          </div>
+        </div>
+        <p class="day-text">
+          {{{day.description}}}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{{!-- SHARE BTN JS --}}
+<script src="/js/share-buttons.js"></script>

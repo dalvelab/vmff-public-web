@@ -1,0 +1,57 @@
+// USAGE
+// PSEUDO: @include pseudo;
+// MEDIA QUERIES: @include screen(phone)
+// CENTER POSIITION : @include center(both);
+
+// PSEUDO: @include pseudo;
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+// MEDIA QUERIES: @include screen(phone)
+$breakpoints: (
+    "phone-small":  375px,
+    "phone":        480px,
+    "tablet":       768px,
+    "tablet-wide":  960px,
+    "desktop":      1250px,
+    "desktop-wide": 1640px
+);
+@mixin screen($width, $type: max) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+// CENTER POSIITION : @include center(both);
+@mixin center($position) {
+  position: absolute;
+  
+  @if $position == 'vertical' {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  @else if $position == 'horizontal' {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translate(-50%);
+  }
+  @else if $position == 'both' {
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+}

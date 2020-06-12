@@ -1,0 +1,19 @@
+.section-children-fest-program {
+  .cards-wrapper {
+    margin: 15px 0px 15px 0px;
+  }
+}
+
+.section-children-fest-slider {
+  .slider {
+    .gallery-image-wrapper {
+      display: inline-block;
+      width: 600px;
+      outline: none;
+      .gallery-image {
+        max-width: 100%;
+        height: auto;
+      }
+    }
+  }
+}

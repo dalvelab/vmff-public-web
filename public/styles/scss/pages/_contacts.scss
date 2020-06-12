@@ -1,0 +1,108 @@
+.section-contacts {
+  .contacts-wrapper {
+    width: 100%;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    .contact {
+      width: auto;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      i {
+        font-size: 20px;
+      }
+      h6 {
+        margin-left: 15px;
+      }
+      p {
+        margin-left: 5px;
+      }
+      &:first-child {
+        i {
+          transform: rotate(90deg);
+        }
+      }
+    }
+    .social-links-wrapper {
+      width: 100%;
+      height: auto;
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      @include screen(tablet) {
+        flex-direction: column;
+      }
+      .btn {
+        margin: 10px 0px 0px 20px;
+        border-radius: 20px;
+        width: 170px;
+        position: relative;
+        @include screen(tablet) {
+          margin-left: 0;
+        }
+        &:first-child {
+          margin-left: 0;
+        }
+        i {
+          font-size: 20px;
+          position: absolute;
+        }
+      }
+      .btn-facebook {
+        border-color: #3b5998;
+        color: #3b5998;
+        &:hover {
+          background-color: #3b5998;
+          color: $white;
+          i {
+            color: $white;
+          }
+        }
+        i {
+          color: #3b5998;
+          left: 18px;
+        }
+      }
+      .btn-instagram {
+        border-color: #c32aa3;
+        color: #c32aa3;
+        i {
+          color: #c32aa3;
+          left: 15px;
+        }
+        &:hover {
+          background-color: #c32aa3;
+          color: $white;
+          i {
+            color: $white;
+          }
+        }
+      }
+      .btn-vk {
+        border-color: #3b5998;
+        color: #3b5998;
+        i {
+          color: #3b5998;
+          left: 13px;
+        }
+        &:hover {
+          background-color: #3b5998;
+          color: $white;
+          i {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+  .yandex-map {
+    margin-top: 20px;
+    height: 700px;
+    @include screen(phone) {
+      height: 500px;
+    }
+  }
+}

@@ -1,0 +1,70 @@
+.section-program-all {
+  .program-description {
+    margin-top: 15px;
+    line-height: 2;
+  }
+  .bg-image-stub {
+    background-image: url("../style-images/stub.jpg");
+    width: 100%;
+    height: calc(100vh - 120px);
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    @include screen(phone) {
+      background-image: none;
+    }
+    .text-container {
+      width: 470px;
+      position: absolute;
+      left: 50%;
+      top: 20%;
+      transform: translateX(-50%);
+      text-align: center;
+      @include screen(phone) {
+        top: 10%;
+        width: 310px;
+      }
+      p {
+        margin-top: 7.5px;
+      }
+      .stub-socials {
+        margin: 15px 0px 25px 0px;
+        width: auto;
+        display: flex;
+        justify-content: center;
+        .icon {
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          margin-left: 15px;
+          border: 2px solid $gray;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          &:first-child {
+            margin-left: 0;
+          }
+          i {
+            font-size: 25px;
+          }
+          .fa-facebook-f {
+            color: #3b5998;
+          }
+          .fa-instagram {
+            color: #c32aa3;
+          }
+          .fa-vk {
+            color: #4a76a8;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-program-today,
+.section-program-all {
+  .cards-wrapper {
+    margin-top: 15px;
+  }
+}

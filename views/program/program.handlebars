@@ -1,0 +1,60 @@
+<!-- Section Program All -->
+<section class="section-program-all">
+  <div class="container">
+    {{#if days}}
+    <h2 class="section-title">
+      Программа <span class="font-red">фестиваля {{year}}</span>
+    </h2>
+    <div class="cards-wrapper">
+    {{#each days}}
+      <a href="/program/day/{{programDay}}" class="card card-program">
+        <img src="/uploads/{{image}}" alt="" class="card-image" />
+        <div class="card-program-content">
+          <div class="date">
+            <div class="round-container">
+              <h6>{{date}}</h6>
+            </div>
+          </div>
+          <div class="info">
+            <h6>{{title}}</h6>
+            <p>Начало в {{startTime}}</p>
+            <p>{{place}}</p>
+          </div>
+        </div>
+        <div class="card-program-icon">
+          <div class="animated-border"></div>
+          <i class="material-icons">arrow_forward</i>
+        </div>
+      </a>
+    {{/each}}
+    </div>
+    {{else}}
+    <div class="bg-image-stub">
+      <div class="text-container">
+        <h4>Программа обновляется</h4>
+        <p>Следите за нами в социальных сетях</p>
+        <div class="stub-socials">
+          <a
+            target="_blank"
+            href="https://www.facebook.com/vmff.ru/"
+            class="icon"
+          >
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a target="_blank" href="https://vk.com/vmff_ekb" class="icon">
+            <i class="fab fa-vk"></i>
+          </a>
+          <a
+            target="_blank"
+            href="https://www.instagram.com/vmff.ru/"
+            class="icon"
+          >
+            <i class="fab fa-instagram"></i>
+          </a>
+        </div>
+        <a href="/" class="btn btn-round">На главную</a>
+      </div>
+    </div>
+    {{/if}}
+  </div>
+</section>

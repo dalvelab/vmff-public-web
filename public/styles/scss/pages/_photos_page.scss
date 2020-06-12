@@ -1,0 +1,43 @@
+// PAGE ALL ALBUMS
+.section-photo-albums {
+  .cards-wrapper {
+    margin-top: 15px;
+    .card {
+      width: 360px;
+      height: 320px;
+      @include screen(phone) {
+        width: 300px;
+        height: 280px;
+      }
+      .card-image {
+        max-width: 100%;
+        border-top-left-radius: 12.5px;
+        border-top-right-radius: 12.5px;
+      }
+    }
+  }
+}
+
+// PAGE SINGLE ALBUM
+.section-photo-single-album {
+  .grid-photos {
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 10px;
+    row-gap: 10px;
+    margin-top: 25px;
+    @include screen(tablet-wide) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 650px) {
+      grid-template-columns: 1fr;
+    }
+    img {
+      border-radius: 5px;
+      max-width: 100%;
+      cursor: pointer;
+    }
+  }
+}
