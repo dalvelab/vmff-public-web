@@ -51,6 +51,10 @@ app.use("/", pages);
 app.use("/program", program);
 app.use("/albums", albums);
 
+app.get("/qr", (req, res) => {
+  res.redirect("/");
+});
+
 const server = app.listen(
   PORT,
   console.log(
