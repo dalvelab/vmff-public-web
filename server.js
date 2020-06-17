@@ -52,7 +52,7 @@ app.use("/program", program);
 app.use("/albums", albums);
 
 app.get("/qr", (req, res) => {
-  res.redirect("/");
+  res.redirect("/?utm_source=qr");
 });
 
 const server = app.listen(
