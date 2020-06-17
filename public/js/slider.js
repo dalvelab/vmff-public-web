@@ -5,6 +5,10 @@ const auto = true;
 const intervalTime = 7500;
 let slideInterval;
 
+window.onload = function () {
+  images[0].classList.add("current");
+};
+
 const nextSlide = () => {
   const current = document.querySelector(".current");
   current.classList.remove("current");

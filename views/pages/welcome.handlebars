@@ -2,7 +2,9 @@
 <section class="section-welcome">
   <div class="slider-welcome">
     <div class="slides">
-      <img class="slide current" src="images/slider-1.jpg" alt="" />
+      {{#each images}}
+      <img class="slide" src="/uploads/{{sliderImage}}" alt="" />
+      {{/each}}
     </div>
     <div class="buttons">
       <div id="prev" class="btn-slider btn-left">
@@ -14,7 +16,9 @@
     </div>
   </div>
   <div class="phone-background">
-    <img class="slide" src="images/slider-1.png" alt="" />
+    {{#if image}}
+    <img class="slide" src="/uploads/{{image}}" alt="" />
+    {{/if}}
   </div>
 </section>
 <!-- Section Information -->
@@ -24,37 +28,15 @@
       О <span class="font-red">Фестивале</span>
     </h2>
     <div class="cards-wrapper">
+      {{#each cards}}
       <div class="card">
         <div class="card-icon">
-          <i class="material-icons">calendar_today</i>
+          <i class="material-icons">{{cardIcon}}</i>
         </div>
-        <h6 class="card-title">Когда?</h6>
-        <p class="card-description">С 1 по 24 июля 2020 года</p>
+        <h6 class="card-title">{{cardTitle}}</h6>
+        <p class="card-description">{{cardText}}</p>
       </div>
-      <div class="card">
-        <div class="card-icon">
-          <i class="material-icons">location_on</i>
-        </div>
-        <h6 class="card-title">Где?</h6>
-        <p class="card-description">
-          г. Екатеринбург, ул. Мира 19, площадь перед главным корпусом
-          УрФУ
-        </p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <i class="material-icons">access_time</i>
-        </div>
-        <h6 class="card-title">Во сколько?</h6>
-        <p class="card-description">Ежедневно с 20:00</p>
-      </div>
-      <div class="card">
-        <div class="card-icon">
-          <i class="material-icons">money_off</i>
-        </div>
-        <h6 class="card-title">Вход бесплатный</h6>
-        <p class="card-description">Во все дни фестиваля</p>
-      </div>
+      {{/each}}
     </div>
   </div>
 </section>
@@ -68,24 +50,72 @@
   </div>
 </section>
 <!-- Section Organizators -->
+{{#if sponsors}}
+<section class="section-sponsors">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="font-red">Спонсоры</span>
+    </h2>
+    <div class="cards-wrapper">
+      {{#each sponsors}}
+      <div class="card">
+        <img src="/uploads/{{cardImage}}" class="card-image" alt="">
+      </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+{{/if}}
+{{#if organizators}}
+<!-- Section Organizators -->
 <section class="section-organizators">
   <div class="container">
     <h2 class="section-title">
       <span class="font-red">Организаторы</span>
     </h2>
     <div class="cards-wrapper">
+      {{#each organizators}}
+        <div class="card">
+          <img src="/uploads/{{cardImage}}" class="card-image" alt="">
+        </div>
+      {{/each}}
     </div>
   </div>
 </section>
-<!-- Section Suppoerters -->
+{{/if}}
+{{#if mediapartners}}
+<!-- Section Organizators -->
+<section class="section-mediapartners">
+  <div class="container">
+    <h2 class="section-title">
+      <span class="font-red">Медиапартнеры</span>
+    </h2>
+    <div class="cards-wrapper">
+      {{#each mediapartners}}
+        <div class="card">
+          <img src="/uploads/{{cardImage}}" class="card-image" alt="">
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</section>
+{{/if}}
+{{#if supporters}}
+<!-- Section Supporters -->
 <section class="section-supporters">
   <div class="container">
     <h2 class="section-title">
       При <span class="font-red">Поддержке</span>
     </h2>
     <div class="cards-wrapper">
+      {{#each mediapartners}}
+        <div class="card">
+          <img src="/uploads/{{cardImage}}" class="card-image" alt="">
+        </div>
+      {{/each}}
     </div>
   </div>
 </section>
+{{/if}}
 <!-- Slider JS -->
 <script src="/js/slider.js"></script>

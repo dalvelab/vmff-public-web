@@ -4,25 +4,9 @@
     <h2 class="section-title">
       Фестиваль <span class="font-red">Детям</span>
     </h2>
-    <p class="section-thesis">
-      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus,
-      inventore pariatur alias quos nobis repellendus repellat adipisci
-      fugit molestiae, architecto nemo perspiciatis voluptas voluptatibus
-      eius! Tempora facere officia veniam explicabo dicta numquam
-      accusamus, ratione quia provident cum? Sapiente consectetur
-      laudantium iure debitis porro ad nobis ea! Reiciendis quas
-      molestias, aperiam perspiciatis rerum, ullam cupiditate veritatis
-      libero dolorem dolores, officiis quam?
-    </p>
-    <p class="section-thesis">
-      Lorem ipsum, dolor sit amet consectetur adipisicing elit. At enim
-      molestias iure libero optio dicta asperiores. Molestiae minima amet
-      dicta ducimus, praesentium maxime illum iste fugit omnis aspernatur
-      nam, laborum atque, dignissimos cum! Veritatis maiores, delectus
-      placeat doloremque deserunt, incidunt maxime quis quo illum, dolore
-      harum voluptates blanditiis. Sit vel qui dolorem praesentium illum,
-      iure modi magnam temporibus necessitatibus magni!
-    </p>
+    <div class="section-thesis">
+      {{{page.text}}}
+    </div>
   </div>
 </section>
 <!-- Section Children Festival Program -->
@@ -32,25 +16,27 @@
       Десткая <span class="font-red">Программа</span>
     </h2>
     <div class="cards-wrapper">
-      {{!-- <a href="#" class="card card-program">
-        <img src="#" alt="" class="card-image" />
+      {{#each days}}
+      <a href="/program/day/{{programDay}}" class="card card-program">
+        <img src="/uploads/{{image}}" alt="" class="card-image" />
         <div class="card-program-content">
           <div class="date">
             <div class="round-container">
-              <h6>3.07</h6>
+              <h6>{{date}}</h6>
             </div>
           </div>
           <div class="info">
-            <h6>Детское событие</h6>
-            <p>Начало в 20:00</p>
-            <p>ул. Мира 19, УрФУ</p>
+            <h6>{{title}}</h6>
+            <p>Начало в {{startTime}}</p>
+            <p>{{place}}</p>
           </div>
         </div>
         <div class="card-program-icon">
           <div class="animated-border"></div>
           <i class="material-icons">arrow_forward</i>
         </div>
-      </a> --}}
+      </a>
+      {{/each}}
     </div>
   </div>
 </section>
@@ -65,18 +51,11 @@
     class="slider slider-nav slick-gallery"
     data-slick='{"slidesToShow": 3, "slidesToScroll": 1, "fade": false, "cssEase": "linear", "arrows": false, "centerMode": false, "focusOnSelect": true, "variableWidth": true, "autoplay": false, "responsive": [{"breakpoint": 1400, "settings": {"centerMode": true}}]}'
   >
+    {{#each page.images}}
     <div class="gallery-image-wrapper">
-      <img src="../images/children_1.jpg" class="gallery-image" />
+      <img src="/uploads/{{sliderImage}}" class="gallery-image" />
     </div>
-    <div class="gallery-image-wrapper">
-      <img src="../images/children_2.jpg" class="gallery-image" />
-    </div>
-    <div class="gallery-image-wrapper">
-      <img src="../images/children_3.jpg" class="gallery-image" />
-    </div>
-    <div class="gallery-image-wrapper">
-      <img src="../images/children_4.jpg" class="gallery-image" />
-    </div>
+    {{/each}}
   </div>
 </section>
 
