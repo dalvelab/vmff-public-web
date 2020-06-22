@@ -4,23 +4,27 @@
     <h2 class="section-title">
       Ресторанный <span class="font-red">Дворик</span>
     </h2>
+    {{#if renters}}
     <div class="cards-wrapper">
-      {{!-- <div class="card">
+      {{#each renters}}
+      <div class="card">
         <img
-          src="../images/logo_sponsors_1.png"
+          src="/uploads/{{cardImage}}"
           alt=""
           class="card-image"
         />
-        <h6 class="card-title">Simple Coffee</h6>
+        <h6 class="card-title">{{cardTitle}}</h6>
         <div class="card-overlay">
-          <h6>Simple Coffee</h6>
-          <p>Кофе | Чай | Выпечка</p>
-          <a target="_blank" href="https://simplecoffee.ru/" class="btn"
+          <h6>{{cardTitle}}</h6>
+          <p>{{cardText}}</p>
+          <a target="_blank" href="{{cardLink}}" class="btn"
             >Перейти на сайт</a
           >
         </div>
-      </div> --}}
+      </div>
+      {{/each}}
     </div>
+    {{/if}}
   </div>
 </section>
 <!-- Section For Renters -->
@@ -28,19 +32,9 @@
   <div class="container">
     <h2 class="section-title">Арендаторам</h2>
     <div class="flex-container">
-      <p class="renters-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Reiciendis error tempore quisquam laudantium labore, animi dolorem
-        esse rerum dolorum a beatae voluptates, odio tempora omnis itaque,
-        debitis tenetur nostrum impedit ipsa repellat nemo repudiandae
-        delectus. Asperiores nobis impedit dignissimos incidunt dolor ab
-        quibusdam? Aliquam eligendi quam ullam ex, ipsum porro.
-      </p>
-      <p class="renters-text">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-        Accusamus at quia ex nisi blanditiis dolorem quas, illo hic rem
-        beatae?
-      </p>
+      <div class="renters-text">
+        {{{page.text}}}
+      </div>
       <div class="cards-wrapper">
         <div class="card">
           <div class="card-icon">

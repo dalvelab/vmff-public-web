@@ -35,8 +35,12 @@ router.get("/", async (req, res) => {
 });
 
 router.get("/restaraunt", async (req, res) => {
+  const page = await Page.findOne({ slug: "restaraunt" }).lean();
+  const renters = page.pageAdditional;
   res.render("pages/restaraunt", {
     title: "Ресторанный дворик | Венский Фестиваль",
+    page: page,
+    renters: renters,
   });
 });
 

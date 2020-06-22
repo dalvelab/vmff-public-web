@@ -18,7 +18,7 @@ router.get("/day/:dayProgram", async (req, res) => {
   const day = await Day.findOne({ programDay: req.params.dayProgram }).lean();
   day.date = day.programDay + " июля, " + `${currentDate.getFullYear()}`;
   res.render("program/program-single", {
-    title: `${day.title}`,
+    title: `${day.title} | Венский Фестиваль`,
     day: day,
   });
 });
