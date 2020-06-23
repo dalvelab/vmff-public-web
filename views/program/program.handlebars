@@ -8,13 +8,14 @@
     <div class="cards-wrapper">
     {{#each days}}
       <a href="/program/day/{{programDay}}" class="card card-program">
+        <div class="card-badge">
+          <p>{{genre}}</p>
+        </div>
         <img src="/uploads/{{image}}" alt="" class="card-image" />
+        <div class="card-date">
+          <h6>{{date}}</h6>
+        </div>
         <div class="card-program-content">
-          <div class="date">
-            <div class="round-container">
-              <h6>{{date}}</h6>
-            </div>
-          </div>
           <div class="info">
             <h6>{{title}}</h6>
             <p>Начало в {{startTime}}</p>

@@ -35,6 +35,12 @@
           color: $pink;
         }
       }
+      &:nth-child(4n) {
+        .card-overlay {
+          background-color: $orange;
+          color: $orange;
+        }
+      }
     }
     .card-overlay {
       position: absolute;

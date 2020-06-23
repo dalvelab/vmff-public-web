@@ -16,7 +16,8 @@ router.get("/", async (req, res) => {
 
 router.get("/day/:dayProgram", async (req, res) => {
   const day = await Day.findOne({ programDay: req.params.dayProgram }).lean();
-  day.date = day.programDay + " июля, " + `${currentDate.getFullYear()}`;
+  let monthDay = day.date.substr(1, 1);
+  day.date = monthDay + " июля, " + `${currentDate.getFullYear()}`;
   res.render("program/program-single", {
     title: `${day.title} | Венский Фестиваль`,
     day: day,
