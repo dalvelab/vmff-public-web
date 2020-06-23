@@ -1,3 +1,4 @@
+// SIDEBAR
 const openSidebarBtn = document.querySelector("#open-sidebar");
 const closeSidebarbtn = document.querySelector("#close-sidebar");
 const sidebar = document.querySelector(".sidebar");
@@ -29,3 +30,5 @@ overlay.addEventListener("click", () => {
   sidebar.style.left = "-300px";
   overlay.style.display = "none";
 });
+
+// MAIL SUBSCRIPTION

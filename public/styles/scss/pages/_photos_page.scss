@@ -4,15 +4,21 @@
     margin-top: 15px;
     .card {
       width: 360px;
-      height: 320px;
+      height: 340px;
       @include screen(phone) {
         width: 300px;
         height: 280px;
       }
       .card-image {
-        max-width: 100%;
-        border-top-left-radius: 12.5px;
-        border-top-right-radius: 12.5px;
+        position: relative;
+        overflow: hidden;
+        min-width: 100%;
+        img {
+          border-top-left-radius: 12.5px;
+          border-top-right-radius: 12.5px;
+          height: 250px;
+          min-width: 100%;
+        }
       }
     }
   }

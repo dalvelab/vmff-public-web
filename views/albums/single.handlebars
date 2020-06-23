@@ -1,0 +1,14 @@
+<section class="section-photo-single-album">
+  <div class="container">
+    {{#if album}}
+    <h2 class="section-title">
+      {{album.albumTitle}},<span class="font-red"> {{album.albumYear}} год</span>
+    </h2>
+    <div class="grid-photos">
+      {{#each album.albumImages}}
+      <img src="/uploads/{{albumImage}}" alt="" />
+      {{/each}}
+    </div>
+    {{/if}}
+  </div>
+</section>

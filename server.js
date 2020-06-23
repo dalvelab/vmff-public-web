@@ -34,11 +34,17 @@ app.use(
   express.static(path.join(__dirname, "../app_admin/public/uploads"))
 );
 
+// HANDLEBARS HELPERS
+const { listItem } = require("./helpers/hbs");
+
 // HANDLEBARS
 app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main",
+    helpers: {
+      listItem: listItem,
+    },
   })
 );
 app.set("view engine", "handlebars");
