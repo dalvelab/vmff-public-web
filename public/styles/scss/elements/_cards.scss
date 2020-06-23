@@ -63,11 +63,11 @@
   }
   .card-program {
     width: 350px;
-    height: 375px;
+    height: 360px;
     transition: 0.3s ease-in-out;
     border-radius: 7.5px;
     @include screen(phone-small) {
-      width: 310px;
+      width: 315px;
     }
     &:hover {
       transform: translateY(-15px);
@@ -126,10 +126,10 @@
     }
     .card-date {
       width: 70px;
-      height: 60px;
+      height: 45px;
       position: absolute;
       left: 0;
-      top: 176px;
+      top: 191px;
       display: flex;
       background-color: $white;
       justify-content: center;
@@ -138,6 +138,9 @@
       transition: 0.2s ease-in-out;
       h6 {
         color: $red;
+      }
+      @include screen(phone-small) {
+        top: 176px;
       }
     }
     .card-program-content {
