@@ -41,6 +41,9 @@
           color: $orange;
         }
       }
+      .card-image {
+        max-width: 80%;
+      }
     }
     .card-overlay {
       position: absolute;

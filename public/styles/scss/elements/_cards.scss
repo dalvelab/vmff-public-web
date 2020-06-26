@@ -63,11 +63,12 @@
   }
   .card-program {
     width: 350px;
-    height: 360px;
+    height: 375px;
     transition: 0.3s ease-in-out;
     border-radius: 7.5px;
     @include screen(phone-small) {
       width: 315px;
+      height: 360px;
     }
     &:hover {
       transform: translateY(-15px);
@@ -121,7 +122,7 @@
       border-top-left-radius: 7.5px;
       border-top-right-radius: 7.5px;
       @include screen(phone-small) {
-        height: 220px;
+        height: 210px;
       }
     }
     .card-date {

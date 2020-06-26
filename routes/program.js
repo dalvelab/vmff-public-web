@@ -29,4 +29,8 @@ router.get("/day/:dayProgram", async (req, res) => {
   });
 });
 
+router.get("/pdf/:id", async (req, res) => {
+  const day = await Day.findOne({ _id: req.params.id });
+});
+
 module.exports = router;

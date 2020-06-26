@@ -158,5 +158,21 @@
         line-height: 2;
       }
     }
+    .day-print-btn {
+      width: 100%;
+      display: flex;
+      flex-direction: row-reverse;
+      .btn {
+        margin-right: 5px;
+        &:hover {
+          i {
+            color: $white;
+          }
+        }
+        i {
+          color: $red;
+        }
+      }
+    }
   }
 }
