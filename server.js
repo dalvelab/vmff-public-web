@@ -2,12 +2,14 @@ const express = require("express");
 const path = require("path");
 const exphbs = require("express-handlebars");
 const dotenv = require("dotenv");
+const bodyParser = require("body-parser");
 const connectDB = require("./config/db");
 
 // Require routes
 const pages = require("./routes/pages");
 const program = require("./routes/program");
 const albums = require("./routes/albums");
+const email = require("./routes/email");
 
 // Load ENV variables
 dotenv.config({ path: "./config/config.env" });
@@ -34,6 +36,9 @@ app.use(
   express.static(path.join(__dirname, "../app_admin/public/uploads"))
 );
 
+// BODY-PARSER
+app.use(bodyParser.urlencoded({ extended: false }));
+
 // HANDLEBARS HELPERS
 const { listItem } = require("./helpers/hbs");
 
@@ -56,6 +61,7 @@ const PORT = process.env.PORT;
 app.use("/", pages);
 app.use("/program", program);
 app.use("/albums", albums);
+app.use("/email", email);
 
 app.get("/qr", (req, res) => {
   res.redirect("/?utm_source=qr");

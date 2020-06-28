@@ -139,13 +139,14 @@ button {
       top: 12.5px;
     }
     .plus-icon {
+      transition: 0.4s ease-in-out;
       transform: rotate(45deg);
     }
   }
   .content {
     width: calc(100% - 50px);
     margin: 10px 0px 10px 50px;
-    max-height: 0;
+    height: 0;
     overflow: hidden;
     transition: 0.4s ease-out;
     line-height: 2;
@@ -167,6 +168,6 @@ button {
     }
   }
   .accordion-opened {
-    max-height: 150px;
+    height: 90px;
   }
 }
