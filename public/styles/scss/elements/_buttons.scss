@@ -21,6 +21,25 @@ button {
 .btn-round {
   border-radius: 20px;
 }
+
+// Scroll Down Btn (Welcome page)
+.btn-scroll-down {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $red;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i {
+    color: $gold;
+  }
+}
+
 // Send Email Button (Use footer on Each Page)
 .send-email-btn {
   width: 100%;
@@ -169,5 +188,8 @@ button {
   }
   .accordion-opened {
     height: 90px;
+    @include screen(phone) {
+      height: 180px;
+    }
   }
 }
