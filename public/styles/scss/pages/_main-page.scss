@@ -65,14 +65,14 @@
     margin-top: 20px;
     overflow: hidden;
     position: relative;
-    width: 100%;
+    width: 90%;
     height: 70vh;
+    margin: auto;
     @include screen(phone) {
       display: block;
     }
     img {
-      width: 600px;
-      height: 400px;
+      width: 100%;
       object-fit: cover;
       @include center(both);
     }

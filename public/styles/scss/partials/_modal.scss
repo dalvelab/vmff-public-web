@@ -1,0 +1,53 @@
+.modal {
+  width: 767px;
+  height: 500px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background-color: $white;
+  z-index: 10;
+  border-radius: 20px;
+  display: none;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 10px;
+  .column {
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    &:first-child {
+      background-color: $gray;
+      border-top-left-radius: 20px;
+      border-bottom-left-radius: 20px;
+    }
+    h1 {
+      color: $black;
+    }
+    .btn {
+      margin-top: 20px;
+    }
+    &:nth-child(2) {
+      background-size: cover;
+      background-position: center center;
+      background-image: url("../style-images/email_modal.jpg");
+      border-top-right-radius: 50%;
+      border-bottom-right-radius: 50%;
+    }
+  }
+  #close_modal {
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    color: $white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.4s ease-in-out;
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}

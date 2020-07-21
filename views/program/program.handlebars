@@ -2,7 +2,7 @@
 <section class="section-program-all">
   <div class="container">
     {{#if days}}
-    {{!-- <h2 class="section-title">
+    <h2 class="section-title">
       Программа <span class="font-red">фестиваля {{year}}</span>
     </h2>
     <div class="cards-wrapper">
@@ -28,8 +28,9 @@
         </div>
       </a>
     {{/each}}
-    </div> --}}
-    <div class="bg-image-stub">
+    </div>
+    {{else}}
+      <div class="bg-image-stub">
       <div class="text-container">
         <h4>Программа обновляется</h4>
         <p>Следите за нами в социальных сетях</p>
@@ -55,8 +56,6 @@
         <a href="/" class="btn btn-round">На главную</a>
       </div>
     </div>
-    {{else}}
-
     {{/if}}
   </div>
 </section>

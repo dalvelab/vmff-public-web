@@ -1,4 +1,5 @@
 // SIDEBAR
+// MAIL SUBSCRIPTION
 const openSidebarBtn = document.querySelector("#open-sidebar");
 const closeSidebarbtn = document.querySelector("#close-sidebar");
 const sidebar = document.querySelector(".sidebar");
@@ -32,3 +33,12 @@ overlay.addEventListener("click", () => {
 });
 
 // MAIL SUBSCRIPTION
+const modal = document.querySelector(".modal");
+const emailSubscribe = document.querySelector(".send-email-btn");
+
+emailSubscribe.addEventListener("click", showModal);
+
+function showModal() {
+  modal.style.display = "grid";
+  overlay.style.display = "block";
+}

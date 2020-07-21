@@ -41,6 +41,9 @@
           color: $orange;
         }
       }
+      @include screen(phone) {
+        margin-right: 0;
+      }
       .card-image {
         max-width: 80%;
       }
