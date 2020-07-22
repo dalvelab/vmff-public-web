@@ -55,7 +55,7 @@
     @include screen(tablet-wide) {
       bottom: 5px;
     }
-    @media screen and (max-height: 550px) {
+    @media screen and (max-height: 570px) {
       display: none;
     }
     .sidebar-icon {
