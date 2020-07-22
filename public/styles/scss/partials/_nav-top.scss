@@ -23,4 +23,12 @@
     margin-left: 10px;
     font-size: 20px;
   }
+  .right {
+    position: absolute;
+    right: 20px;
+    top: 18.5px;
+    @include screen(phone) {
+      display: none;
+    }
+  }
 }
