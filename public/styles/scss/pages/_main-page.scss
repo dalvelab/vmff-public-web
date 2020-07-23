@@ -60,6 +60,22 @@
       opacity: 1;
     }
   }
+  .phone-registration-alert {
+    width: 100%;
+    height: 35px;
+    background-color: $gray;
+    display: none;
+    margin-top: -10px;
+    align-items: center;
+    justify-content: center;
+    a {
+      font-size: 14px;
+      color: $red;
+    }
+    @include screen(phone) {
+      display: flex;
+    }
+  }
   .phone-background {
     display: none;
     margin-top: 20px;
