@@ -3,6 +3,8 @@ const router = express.Router();
 
 const Day = require("../models/Day");
 
+const getMonth = require('../middleware/getMonth');
+
 const currentDate = new Date();
 
 router.get("/", async (req, res) => {
@@ -17,12 +19,19 @@ router.get("/", async (req, res) => {
 router.get("/day/:dayProgram", async (req, res) => {
   const day = await Day.findOne({ programDay: req.params.dayProgram }).lean();
   let monthDay = day.date;
+  let monthNumber = day.date;
   if (monthDay.charAt(0) === "0") {
     monthDay = monthDay.substr(1, 1);
   } else {
     monthDay = monthDay.substr(0, 2);
   }
-  day.date = monthDay + " июля, " + `${currentDate.getFullYear()}`;
+  if (monthNumber.charAt(3) === "0") {
+    monthNumber = monthNumber.substr(4, 4);
+  } else {
+    monthNumber = monthNumber.substr(3, 4);
+  }
+  const monthName = getMonth(monthNumber);
+  day.date = monthDay + ` ${monthName}, ` + `${currentDate.getFullYear()}`;
   res.render("program/program-single", {
     title: `${day.title} | Венский Фестиваль`,
     day: day,
