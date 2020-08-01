@@ -7,7 +7,7 @@
     </h2>
     <div class="cards-wrapper">
     {{#each days}}
-      <a href="/program/day/{{programDay}}" class="card card-program">
+      <a href="/program/day/{{programDay}}" class="card card-program {{#if isPassed}} day-passed {{/if}}">
         <div class="card-badge">
           <p>{{genre}}</p>
         </div>

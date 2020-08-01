@@ -1,4 +1,6 @@
-document.addEventListener("DOMContentLoaded", function () {
+const btnScrollDown = document.querySelector(".btn-scroll-down");
+
+btnScrollDown.addEventListener("click", function () {
   const duration = 800;
 
   const scrollToTarget = function (target) {
