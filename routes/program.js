@@ -14,9 +14,10 @@ router.get("/", async (req, res) => {
     currentDate.getMonth() + 1
   }`.split(".");
   days.forEach((day) => {
-    if (modifyDate(day.date)[1] < dateNow[1]) {
-      day.isPassed = true;
-    } else if (modifyDate(day.date)[0] < dateNow[0]) {
+    if (
+      modifyDate(day.date)[1] < dateNow[1] ||
+      modifyDate(day.date)[0] < dateNow[0]
+    ) {
       day.isPassed = true;
     }
   });
