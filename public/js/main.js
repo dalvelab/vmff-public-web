@@ -1,5 +1,4 @@
 // SIDEBAR
-// MAIL SUBSCRIPTION
 const openSidebarBtn = document.querySelector("#open-sidebar");
 const closeSidebarbtn = document.querySelector("#close-sidebar");
 const sidebar = document.querySelector(".sidebar");
@@ -31,6 +30,8 @@ overlay.addEventListener("click", () => {
   sidebar.style.left = "-300px";
   overlay.style.display = "none";
   modal.style.display = "none";
+  registerNotification.style.display = "none";
+  RegisterNotificationSetStorage();
 });
 
 // MAIL SUBSCRIPTION
@@ -49,4 +50,35 @@ function showModal(e) {
   e.preventDefault();
   modal.style.display = "grid";
   overlay.style.display = "block";
+}
+
+// REGISTER NOTIFICATION
+const registerNotification = document.querySelector(".register-notification");
+
+document.addEventListener("DOMContentLoaded", () => {
+  if (sessionStorage.getItem("registerNotificationChecked") === null) {
+    registerNotification.style.display = "grid";
+    overlay.style.display = "block";
+    const closeRegisterNotification = document.querySelector(
+      "#close-register-notification"
+    );
+    closeRegisterNotification.addEventListener("click", () => {
+      registerNotification.style.display = "none";
+      overlay.style.display = "none";
+      RegisterNotificationSetStorage();
+    });
+    const closeRegisterNotificationBtn = document.querySelector(
+      ".close-register-notification-btn"
+    );
+    closeRegisterNotificationBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      registerNotification.style.display = "none";
+      overlay.style.display = "none";
+      RegisterNotificationSetStorage();
+    });
+  }
+});
+
+function RegisterNotificationSetStorage() {
+  sessionStorage.setItem("registerNotificationChecked", "true");
 }

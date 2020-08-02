@@ -1,0 +1,80 @@
+.register-notification {
+  width: 40%;
+  height: 500px;
+  background-color: $gray;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 12;
+  display: none;
+  border-radius: 10px;
+  @media screen and (max-width: 1650px) {
+    width: 50%;
+  }
+  @include screen(desktop) {
+    width: 60%;
+  }
+  @include screen(tablet) {
+    width: 80%;
+    height: 400px;
+  }
+  @include screen(phone) {
+    width: 90%;
+    height: 500px;
+  }
+  #close-register-notification {
+    font-size: 30px;
+    color: $red;
+    position: absolute;
+    right: -30px;
+    top: -30px;
+    cursor: pointer;
+    @include screen(phone) {
+      top: -40px;
+      right: -15px;
+    }
+    @include screen(phone-small) {
+      top: -30px;
+      right: -15px;
+    }
+  }
+  .grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    @include screen(tablet-wide) {
+      grid-template-columns: 1fr;
+    }
+    .column {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      &:nth-child(2) {
+        background-image: url("../style-images/register-notification.png");
+        background-size: cover;
+        background-position: center center;
+        @include screen(tablet-wide) {
+          display: none;
+        }
+      }
+      p {
+        padding: 5px;
+        font-weight: 600;
+      }
+      .btn {
+        margin-top: 7.5px;
+      }
+      .close-register-notification-btn {
+        padding: 10px 50px;
+        display: none;
+        @include screen(phone) {
+          display: block;
+        }
+      }
+    }
+  }
+}
