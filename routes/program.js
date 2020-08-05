@@ -20,6 +20,7 @@ router.get("/", async (req, res) => {
       day.isPassed = true;
     }
   });
+  console.log(dateNow);
   res.render("program/program", {
     title: `Программа ${currentDate.getFullYear()} | Венский Фестиваль`,
     days: days,

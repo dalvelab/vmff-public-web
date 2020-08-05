@@ -25,6 +25,7 @@
       transition: 0.2s ease-in-out;
       transform: translateY(-50%);
       top: 50%;
+      user-select: none;
       i {
         color: $black;
         font-size: 35px;
