@@ -53,32 +53,3 @@ function showModal(e) {
 }
 
 // REGISTER NOTIFICATION
-const registerNotification = document.querySelector(".register-notification");
-
-document.addEventListener("DOMContentLoaded", () => {
-  if (sessionStorage.getItem("registerNotificationChecked") === null) {
-    registerNotification.style.display = "grid";
-    overlay.style.display = "block";
-    const closeRegisterNotification = document.querySelector(
-      "#close-register-notification"
-    );
-    closeRegisterNotification.addEventListener("click", () => {
-      registerNotification.style.display = "none";
-      overlay.style.display = "none";
-      RegisterNotificationSetStorage();
-    });
-    const closeRegisterNotificationBtn = document.querySelector(
-      ".close-register-notification-btn"
-    );
-    closeRegisterNotificationBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      registerNotification.style.display = "none";
-      overlay.style.display = "none";
-      RegisterNotificationSetStorage();
-    });
-  }
-});
-
-function RegisterNotificationSetStorage() {
-  sessionStorage.setItem("registerNotificationChecked", "true");
-}
