@@ -9,18 +9,35 @@ const modifyDate = require("../middleware/dateModifier");
 const currentDate = new Date();
 
 router.get("/", async (req, res) => {
-  const days = await Day.find().sort({ programDay: 1 }).lean();
-  const dateNow = modifyDate(
-    `${currentDate.getDate()}.${currentDate.getMonth() + 1}`
+  let days = await Day.find().sort({ programDay: 1 }).lean();
+
+  console.log(
+    currentDate >
+      new Date(
+        `${currentDate.getFullYear()}-${days[0].date
+          .split(".")
+          .reverse()
+          .join("-")}`
+      )
   );
-  days.forEach((day) => {
-    if (modifyDate(day.date)[1] < dateNow[1]) {
-      day.isPassed = true;
-    } else if (modifyDate(day.date)[0] < dateNow[0]) {
-      day.isPassed = true;
+
+  days.map(async (day) => {
+    if (
+      new Date(
+        `${currentDate.getFullYear()}-${day.date
+          .split(".")
+          .reverse()
+          .join("-")}`
+      ) < currentDate
+    ) {
+      await Day.updateOne(
+        { _id: day._id },
+        {
+          isPassed: true,
+        }
+      );
     }
   });
-  console.log(dateNow);
   res.render("program/program", {
     title: `Программа ${currentDate.getFullYear()} | Венский Фестиваль`,
     days: days,
