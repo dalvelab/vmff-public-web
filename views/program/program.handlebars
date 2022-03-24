@@ -11,11 +11,16 @@
         <div class="card-badge">
           <p>{{genre}}</p>
         </div>
-        <img src="/uploads/{{image}}" loading="lazy" alt="" class="card-image" />
+        <img src="/uploads/{{image}}" loading="lazy" alt="main image" class="card-image" />
         <div class="card-date">
           <h6>{{date}}</h6>
         </div>
         <div class="card-program-content">
+          {{#if sponsor}}
+          <div class="card-sponsor-image">
+            <img src="/uploads/{{sponsor}}" alt="sponsor">
+          </div>
+          {{/if}}
           <div class="info">
             <h6>{{title}}</h6>
             <p>Начало в {{startTime}}</p>

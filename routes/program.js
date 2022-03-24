@@ -11,15 +11,15 @@ const currentDate = new Date();
 router.get("/", async (req, res) => {
   let days = await Day.find().sort({ programDay: 1 }).lean();
 
-  console.log(
-    currentDate >
-      new Date(
-        `${currentDate.getFullYear()}-${days[0].date
-          .split(".")
-          .reverse()
-          .join("-")}`
-      )
-  );
+  // console.log(
+  //   currentDate >
+  //     new Date(
+  //       `${currentDate.getFullYear()}-${days[1].date
+  //         .split(".")
+  //         .reverse()
+  //         .join("-")}`
+  //     )
+  // );
 
   days.map(async (day) => {
     if (
